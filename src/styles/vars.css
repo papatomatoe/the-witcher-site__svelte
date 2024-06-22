@@ -1,0 +1,63 @@
+:root {
+	--font--primary: FuturaPT, Arial, Helvetica, sans-serif;
+
+	--color--white: #ffffff;
+	--color--black: #000000;
+	--color--grey-9: #181818;
+	--color--grey-18: #2f2f2f;
+	--color--grey-20: #333333;
+	--color--grey-23: #3b3b3b;
+	--color--grey-21: #343338;
+	--color--grey-36: #5d5d5d;
+	--color--grey-46: #757575;
+	--color--grey-51: #828282;
+	--color--grey-64: #a3a3a3;
+	--color--grey-73: #b9b9b9;
+	--color--grey-76: #c2c1c3;
+	--color--grey-82: #d1d1d1;
+
+	--color--red-100: #ff1e1e;
+	--color--red-82: #ec3f3f;
+	--color--red-59: #d14c4c;
+	--color--red-56: #c63838;
+	--color--red-35: #422020;
+	--color--red-24: #2e1c1c;
+	--color--red-9: #8e7979;
+
+	--color--icon: var(--color--black);
+
+	--shadow--red: 0 2px 24px 0 rgba(250, 30, 30, 0.5);
+
+	--linear-gradient--v-1: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+	--linear-gradient--v-2: linear-gradient(0deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+	--linear-gradient--h-1: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, transparent 100%);
+
+	--text--global: normal 400 16px/1.5 var(--font--primary);
+
+	--text--H1-desk: normal 500 56px/1 var(--font--primary);
+	--text--H2-desk: normal 500 40px/1.2 var(--font--primary);
+	--text--H3-desk: normal 500 32px/1.2 var(--font--primary);
+	--text--H4b-desk: normal 500 24px/1.3 var(--font--primary);
+	--text--H4-desk: normal 400 24px/1.3 var(--font--primary);
+	--text--P-desk: normal 400 16px/1.5 var(--font--primary);
+	--text--Pb-desk: normal 500 16px/1.5 var(--font--primary);
+	--text--link-desk: normal 400 14px/1.4 var(--font--primary);
+
+	--text--H1-tab: normal 500 40px/1 var(--font--primary);
+	--text--H2-tab: normal 500 32px/1.2 var(--font--primary);
+	--text--H3-tab: normal 500 24px/1.3 var(--font--primary);
+	--text--H4b-tab: normal 500 20px/1.4 var(--font--primary);
+	--text--H4-tab: normal 400 20px/1.4 var(--font--primary);
+	--text--P-tab: normal 400 16px/1.5 var(--font--primary);
+	--text--Pb-tab: normal 500 16px/1.5 var(--font--primary);
+	--text--link-tab: normal 400 14px/1.4 var(--font--primary);
+
+	--text--H1-mob: normal 500 32px/1.2 var(--font--primary);
+	--text--H2-mob: normal 500 28px/1.3 var(--font--primary);
+	--text--H4b-mob: normal 500 16px/1.5 var(--font--primary);
+	--text--H3-mob: normal 500 24px/1.3 var(--font--primary);
+	--text--H4-mob: normal 400 16px/1.5 var(--font--primary);
+	--text--P-mob: normal 400 16px/1.4 var(--font--primary);
+	--text--Pb-mob: normal 500 16px/1.5 var(--font--primary);
+	--text--link-mob: normal 400 14px/1.4 var(--font--primary);
+}

@@ -1,0 +1,127 @@
+@import url(fonts.css);
+@import url(vars.css);
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	min-width: 345px;
+	font-family: var(--font--primary);
+	background-color: var(--color--grey-9);
+	color: var(--color--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+	padding: 0;
+}
+
+ul,
+ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	position: relative;
+	color: var(--color--grey-73);
+	text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+	color: var(--color--white);
+}
+
+a:active {
+	opacity: 0.7;
+}
+
+button {
+	cursor: pointer;
+}
+
+#app {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.page-content {
+	flex-grow: 1;
+}
+
+.button {
+	padding: 12px 32px;
+	font-family: var(--font--primary);
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.5;
+	text-align: center;
+	color: var(--color--white);
+	background-color: var(--color--red-24);
+	border: 1px solid var(--color--red-56);
+}
+
+.button--contained {
+	padding: 12px 33px;
+	background-color: var(--color--red-82);
+}
+
+.button:hover,
+.button:focus-visible {
+	background-color: var(--color--red-100);
+	box-shadow: var(--shadow--red);
+	border-color: var(--color--red-100);
+}
+
+.error-text {
+	font-size: 12px;
+	line-height: 1;
+	font-weight: 400;
+	color: var(--color--red-59);
+}
+
+.v-h {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+@media (min-width: 672px) {
+	.page-container {
+		width: 640px;
+		margin: 0 auto;
+	}
+}
+
+@media (min-width: 1260px) {
+	.page-container {
+		width: 1200px;
+	}
+}
