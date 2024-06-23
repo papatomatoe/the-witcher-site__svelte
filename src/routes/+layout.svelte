@@ -34,13 +34,11 @@
 	});
 </script>
 
-<main class="page-content">
-	{#if $navigating}
-		<p class="spinner">Loading...</p>
-	{:else}
-		{@render children()}
-	{/if}
-</main>
+{#if $navigating}
+	<p class="spinner">Loading...</p>
+{:else}
+	{@render children()}
+{/if}
 
 <Footer />
 

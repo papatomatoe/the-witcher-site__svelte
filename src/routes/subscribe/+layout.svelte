@@ -12,13 +12,15 @@
 
 <Header bg="off" />
 
-<div class="subscribe">
-	<div class="subscribe__container page-container">
-		{@render children()}
+<main class="page-content">
+	<div class="subscribe">
+		<div class="subscribe__container page-container">
+			{@render children()}
 
-		<Contacts />
+			<Contacts />
+		</div>
 	</div>
-</div>
+</main>
 
 <style>
 	.subscribe {

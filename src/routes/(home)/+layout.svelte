@@ -11,7 +11,9 @@
 	<a class="header__link button" href="/subscribe">Подключить подписку</a>
 </Header>
 
-{@render children()}
+<main class="page-content">
+	{@render children()}
+</main>
 
 <style>
 	.header__link {
