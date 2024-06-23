@@ -96,6 +96,13 @@ button {
 	border-color: var(--color--red-100);
 }
 
+.button:disabled {
+	background-color: var(--color--grey-51);
+	color: var(--color--grey-76);
+	border-color: var(--color--grey-51);
+	box-shadow: none;
+}
+
 .error-text {
 	font-size: 12px;
 	line-height: 1;
