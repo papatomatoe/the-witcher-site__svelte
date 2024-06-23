@@ -73,7 +73,7 @@
 	}
 
 	:global(.maplibregl-canvas) {
-		filter: greyscale(100%) brightness(58%) contrast(410%);
+		filter: grayscale(100%) brightness(58%) contrast(410%);
 	}
 
 	.map-sections {
