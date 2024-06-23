@@ -26,13 +26,13 @@
 
 		<ul class="footer__social social">
 			<li class="social__item">
-				<a class="social__link" href="/"><Instagram /></a>
+				<a class="social__link" href="/" aria-label="Инстаграм"><Instagram /></a>
 			</li>
 			<li class="social__item">
-				<a class="social__link" href="/"><Facebook /></a>
+				<a class="social__link" href="/" aria-label="Фейсбук"><Facebook /></a>
 			</li>
 			<li class="social__item">
-				<a class="social__link" href="/"><Vk /></a>
+				<a class="social__link" href="/" aria-label="Ви Кей"><Vk /></a>
 			</li>
 		</ul>
 	</div>
