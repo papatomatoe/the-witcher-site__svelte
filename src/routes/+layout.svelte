@@ -36,10 +36,19 @@
 
 <main class="page-content">
 	{#if $navigating}
-		<p>Loading...</p>
+		<p class="spinner">Loading...</p>
 	{:else}
 		{@render children()}
 	{/if}
 </main>
 
 <Footer />
+
+<style>
+	.spinner {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		translate: -50% -50%;
+	}
+</style>
