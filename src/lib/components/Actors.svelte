@@ -5,49 +5,13 @@
 	import { clickOutside } from '$lib/helpers/clickOutside';
 	import emblaCarouselSvelte from 'embla-carousel-svelte';
 	import type { EmblaCarouselType } from 'embla-carousel';
+	import type { IActor } from '$lib/types/index';
 
-	const actors = [
-		{
-			id: '1',
-			name: 'Генри Кавилл',
-			personage: 'Геральт',
-			description:
-				'Один из центральных персонажей сериала, лучший друг и неизменный спутник Геральта, трубадур и бабник',
-			image: '/uploads/actor-01'
-		},
-		{
-			id: '2',
-			name: 'Джои Бэти',
-			personage: 'Лютик',
-			description:
-				'Один из центральных персонажей сериала, лучший друг и неизменный спутник Геральта, трубадур и бабник',
-			image: '/uploads/actor-02'
-		},
-		{
-			id: '3',
-			name: 'Аня Чалотра',
-			personage: 'Йеннифэр',
-			description:
-				'Один из центральных персонажей сериала, лучший друг и неизменный спутник Геральта, трубадур и бабник',
-			image: '/uploads/actor-03'
-		},
-		{
-			id: '4',
-			name: 'Фрейя Аллан',
-			personage: 'Цири',
-			description:
-				'Один из центральных персонажей сериала, лучший друг и неизменный спутник Геральта, трубадур и бабник',
-			image: '/uploads/actor-04'
-		},
-		{
-			id: '5',
-			name: 'Барт Эдвардс',
-			personage: 'Эмгыр вар Эмрейс',
-			description:
-				'Один из центральных персонажей сериала, лучший друг и неизменный спутник Геральта, трубадур и бабник',
-			image: '/uploads/actor-05'
-		}
-	];
+	interface Props {
+		actors: IActor[];
+	}
+
+	let { actors }: Props = $props();
 
 	let emblaApi = $state<EmblaCarouselType>();
 

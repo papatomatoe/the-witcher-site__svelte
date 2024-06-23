@@ -1,68 +1,31 @@
 <script lang="ts">
 	import Image from '$lib/components/Image.svelte';
+	import { getPhotos } from '$lib/mock';
 	import { device } from '$lib/store/environment';
+	import type { IPhoto } from '$lib/types';
 
-	const photos = [
-		{
-			id: '1',
-			image: 'uploads/photo-01',
-			alt: 'Генри Кавилл в образе ведьмака держит операторскую хлопушку'
-		},
-		{
-			id: '2',
-			image: 'uploads/photo-02',
-			alt: 'Съемочный процесс'
-		},
-		{
-			id: '3',
-			image: 'uploads/photo-03',
-			alt: 'Съемочный процесс'
-		},
-		{
-			id: '4',
-			image: 'uploads/photo-04',
-			alt: 'Аня Чалотра в образе Йеннифэр смотрит в видоискатель камеры на съемочной площадке'
-		},
-		{
-			id: '5',
-			image: 'uploads/photo-05',
-			alt: 'Группа каскадеров позирует на фоне декораций фильма'
-		},
-		{
-			id: '_2',
-			image: 'uploads/photo-02',
-			alt: 'Съемочный процесс'
-		},
-		{
-			id: '_3',
-			image: 'uploads/photo-03',
-			alt: 'Съемочный процесс'
-		},
-		{
-			id: '_4',
-			image: 'uploads/photo-04',
-			alt: 'Аня Чалотра в образе Йеннифэр смотрит в видоискатель камеры на съемочной площадке'
-		},
-		{
-			id: '_5',
-			image: 'uploads/photo-05',
-			alt: 'Группа каскадеров позирует на фоне декораций фильма'
-		}
-	];
+	interface Props {
+		photos: IPhoto[];
+	}
 
-	let shownPhotosCount = $state(3);
+	let { photos }: Props = $props();
 
-	$effect(() => {
-		shownPhotosCount = $device === 'mobile' ? 3 : 5;
-	});
+	let loading = $state(false);
 
-	const handleShowMorePhotos = () => {
-		if (shownPhotosCount < photos.length) {
-			shownPhotosCount += $device === 'mobile' ? 3 : 5;
+	const handleShowMorePhotos = async () => {
+		loading = true;
+		try {
+			const newPhotos = await getPhotos({
+				qty: $device === 'mobile' ? 3 : 8,
+				shift: photos.length
+			});
+			photos = [...photos, ...newPhotos];
+		} catch (e) {
+			console.error(e);
+		} finally {
+			loading = false;
 		}
 	};
-
-	const shownPhotos = $derived(photos.slice(0, shownPhotosCount));
 </script>
 
 <section class="photos">
@@ -70,13 +33,18 @@
 		<h2 class="photos__title">Кадры со съемок</h2>
 		{#if photos?.length}
 			<ul class="photos__list">
-				{#each shownPhotos as photo (photo.id)}
+				{#each photos as photo (photo.id)}
 					<li class="photos__item photo">
 						<Image src={photo.image} alt={photo.alt} width="328" height="212" />
 					</li>
 				{/each}
 			</ul>
-			<button class="button photos__button" type="button" onclick={handleShowMorePhotos}>
+			<button
+				class="button photos__button"
+				type="button"
+				onclick={handleShowMorePhotos}
+				disabled={loading}
+			>
 				Показать еще
 			</button>
 		{/if}

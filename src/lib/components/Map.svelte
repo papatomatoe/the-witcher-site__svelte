@@ -2,32 +2,18 @@
 	import { MapLibre, Marker, Popup, mapContext, type LngLatLike } from 'svelte-maplibre';
 	import Logo from '$lib/components/Logo.svelte';
 	import { device } from '$lib/store/environment';
-	const markers = [
-		{
-			id: '1',
-			coords: [37.617500738388884, 55.75026584647786],
-			title: 'Магазин 1',
-			address: 'Москва, Улица, д. 34'
-		},
-		{
-			id: '2',
-			coords: [37.55481582427509, 55.75553216507733],
-			title: 'Еще Магазин',
-			address: 'Москва, Еще одна улица, д. 123'
-		},
-		{
-			id: '3',
-			coords: [37.52477189060189, 55.78339374064491],
-			title: 'Еще Магазин',
-			address: 'Москва, Еще улица, д. 55'
-		}
-	];
+	import type { IMarker } from '$lib/types';
+
+	interface Props {
+		markers: IMarker[];
+	}
+
+	let { markers }: Props = $props();
 
 	let center = $state<LngLatLike>([37.57350289423982, 55.76387248279491]);
 	let zoom = $state(11.5);
 
 	$effect(() => {
-		// $map?.setLayoutProperty('label_country', 'text-field', ['get', `name:ru`]);
 		zoom = $device === 'mobile' ? 10 : 11.5;
 	});
 </script>
