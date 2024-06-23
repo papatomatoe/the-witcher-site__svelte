@@ -330,8 +330,8 @@
 		}
 
 		.embla {
-			padding-left: calc(calc(100% - 720px) / 2);
-			padding-right: calc(calc(100% - 720px) / 2);
+			padding-left: calc(calc(100% - 640px) / 2);
+			padding-right: calc(calc(100% - 640px) / 2);
 		}
 
 		.actor {
